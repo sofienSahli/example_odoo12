@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="example_view" model="ir.ui.view">
+        <field name="name">Example Field name</field>
+        <field name="model">example.class</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="name"/>
+                    <field name="roll_no"/>
+                    <field name="division"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="record_example_id" model="ir.actions.act_window">
+        <field name="name">school new</field>
+        <field name="res_model">example.class</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+
+    </record>
+
+    <menuitem
+            name="example parent menu item"
+            id="example_parent_item"
+    />
+
+    <menuitem
+            name="example child menu item"
+            parent="example_parent_item"
+            action="record_example_id"
+            id="example_child_item"
+    />
+
+</odoo>
